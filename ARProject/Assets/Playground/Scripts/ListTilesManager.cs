@@ -9,11 +9,6 @@ public class ListTilesManager : MonoBehaviour
 
     private void Start()
     {
-        //PenguinPresence[] TilePointer= FindObjectsOfType<PenguinPresence>();
-        tileList.AddRange(FindObjectsOfType<PenguinPresence>());
-       //foreach(PenguinPresence element in TilePointer)
-       // {
-       //     tileList.Add(element.gameObject);
-       // }
+        tileList.AddRange(FindObjectsOfType<PenguinPresence>()); 
     }
 }

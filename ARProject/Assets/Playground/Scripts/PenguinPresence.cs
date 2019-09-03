@@ -6,7 +6,6 @@ public class PenguinPresence : MonoBehaviour
 {
     [SerializeField]
     bool occupiedByPenguin;
-    // Start is called before the first frame update
     void Start()
     {
         occupiedByPenguin = false;
