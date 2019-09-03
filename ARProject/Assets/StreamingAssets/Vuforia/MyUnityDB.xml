@@ -2,5 +2,6 @@
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
     <ImageTarget name="naniKoreeeeeeeeeeeeeeeeeeeeee" size="0.100000 0.056270" />
+    <ImageTarget name="faceMozaic" size="0.100000 0.100000" />
   </Tracking>
 </QCARConfig>
