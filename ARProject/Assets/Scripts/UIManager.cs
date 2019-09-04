@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class UIManager : MonoBehaviour
 
     GameObject textTimer;
     GameObject textScoreUp;
+    [SerializeField] GameObject textScoreWindows;
     [SerializeField]GameObject finalScoringWindows;
 
     private void Awake()
@@ -23,14 +25,18 @@ public class UIManager : MonoBehaviour
     {
         WindowsTimer();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         Scoring();
+        WindowsFinalScoring();
     }
 
-
+    private void WindowsFinalScoring()
+    {
+        textScoreWindows.GetComponent<Text>().text = "X " + ScoreManager.score.ToString();
+    }
 
     void WindowsTimer()
     {

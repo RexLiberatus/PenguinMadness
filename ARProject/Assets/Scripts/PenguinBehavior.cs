@@ -38,7 +38,7 @@ public class PenguinBehavior : MonoBehaviour
             //trigger KO animation here
 
             //add the score value to total
-            //ScoreManager.score+=1;
+            ScoreManager.score+=1;
 
 
             StartCoroutine(CooldownKOPenguin());
