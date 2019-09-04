@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
 
     public float time = 10f;
+
     GameObject textTimer;
     GameObject textScoreUp;
     [SerializeField]GameObject finalScoringWindows;
@@ -38,7 +39,7 @@ public class UIManager : MonoBehaviour
 
     void Scoring()
     {
-        textScoreUp.GetComponent<Text>().text = "Score : ";
+        textScoreUp.GetComponent<Text>().text = "Score : " + ScoreManager.score.ToString();
     }
 
     IEnumerator Timer()
