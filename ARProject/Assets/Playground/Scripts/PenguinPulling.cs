@@ -8,8 +8,6 @@ public class PenguinPulling : MonoBehaviour
     [SerializeField]
     GameObject penguinPrefab;
     [SerializeField]
-    int numberOfPenguins;
-    [SerializeField]
     float offsetHeight;
     ListTilesManager tilesOccupationManager;
     public static List<GameObject> penguinPullList;
@@ -17,27 +15,18 @@ public class PenguinPulling : MonoBehaviour
 
     #region Accessors
     public GameObject PenguinPrefab { get => penguinPrefab; set => penguinPrefab = value; }
-    public int NumberOfPenguins { get => numberOfPenguins; set => numberOfPenguins = value; }
     public float OffsetHeight { get => -offsetHeight; set => offsetHeight = value; }
     #endregion
     private void Awake()
     {
-        if (NumberOfPenguins < 6)
-            NumberOfPenguins = 6;
-        if (NumberOfPenguins > 16)
-            NumberOfPenguins = 16;
-
-        penguinPullList = new List<GameObject>(NumberOfPenguins);
 
     }
     private void Start()
     {
         tilesOccupationManager = tilesOccupationManager ?? FindObjectOfType<ListTilesManager>();
-       
-        for (int i = 0; i < NumberOfPenguins ; i++)
-        {
-            penguinPullList.Add(Instantiate(penguinPrefab));
-        }
+
+      //get all penguin by foreach
+
         foreach (GameObject item in penguinPullList)
         {
             item.SetActive(false);
