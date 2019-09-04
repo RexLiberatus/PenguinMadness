@@ -6,16 +6,20 @@ public class PenguinBehavior : MonoBehaviour
 {
     [SerializeField]
     int cooldownKO;
+    [SerializeField]
     bool hasBeenHit;
     [SerializeField]
     float minCooldown;
     [SerializeField]
     float maxCooldown;
+
+    public bool HasBeenHit { get => hasBeenHit; set => hasBeenHit = value; }
+
     private void Start()
     {
-        if (cooldownKO <= 0)
-            cooldownKO = 1;
-        hasBeenHit = false;
+        if (cooldownKO <= 3)
+            cooldownKO = 10;
+        HasBeenHit = false;
         
     }
     private void OnEnable()
@@ -30,11 +34,10 @@ public class PenguinBehavior : MonoBehaviour
         {
             gameObject.SetActive(false);
             other.GetComponent<PenguinPresence>().PenguinLeftTile();
-
         }
-        if(other.tag=="Fist" && !hasBeenHit)//if KO
+        if(other.tag=="Fist" && !HasBeenHit)//if KO
         {
-            hasBeenHit = true;
+            HasBeenHit = true;
             //trigger KO animation here
 
             //add the score value to total
@@ -42,12 +45,13 @@ public class PenguinBehavior : MonoBehaviour
 
 
             StartCoroutine(CooldownKOPenguin());
+            
         }
     }
     IEnumerator CooldownKOPenguin()
     {
         yield return new WaitForSeconds(cooldownKO);
-        gameObject.SetActive(false);
+        HasBeenHit = false;
     }
 
 }

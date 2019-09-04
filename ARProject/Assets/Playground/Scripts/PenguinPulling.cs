@@ -49,7 +49,7 @@ public class PenguinPulling : MonoBehaviour
     void AddPenguinsOnTile(GameObject PenguinToPlace, List<PenguinPresence> PlaygroundTiles)
     {
         PenguinToPlace.SetActive(true);
-        PenguinToPlace.transform.position = new Vector3(0, OffsetHeight, 0);
+        
         bool placed = false;
         foreach (PenguinPresence item in PlaygroundTiles)
         {
@@ -59,8 +59,9 @@ public class PenguinPulling : MonoBehaviour
                 {
                     placed = true;
                     item.PenguinJoinedTile();
-                    PenguinToPlace.transform.position = new Vector3(0, OffsetHeight, 0)+item.transform.position;
                     PenguinToPlace.transform.SetParent(item.transform);
+                    PenguinToPlace.transform.localScale = penguinPrefab.transform.localScale;
+                    PenguinToPlace.transform.localPosition = penguinPrefab.transform.localPosition + new Vector3(0, OffsetHeight, 0);
                     
                 }
             }
