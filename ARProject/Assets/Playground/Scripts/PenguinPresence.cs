@@ -6,17 +6,20 @@ public class PenguinPresence : MonoBehaviour
 {
     [SerializeField]
     bool occupiedByPenguin;
+
+    public bool OccupiedByPenguin { get => occupiedByPenguin; set => occupiedByPenguin = value; }
+
     void Start()
     {
-        occupiedByPenguin = false;
+        OccupiedByPenguin = false;
     }
 
    public void PenguinJoinedTile()
     {
-        occupiedByPenguin = true;
+        OccupiedByPenguin = true;
     }
     public void PenguinLeftTile()
     {
-        occupiedByPenguin = false;
+        OccupiedByPenguin = false;
     }
 }

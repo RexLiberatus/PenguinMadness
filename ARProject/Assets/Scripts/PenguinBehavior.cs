@@ -7,6 +7,10 @@ public class PenguinBehavior : MonoBehaviour
     [SerializeField]
     int cooldownKO;
     bool hasBeenHit;
+    [SerializeField]
+    float minCooldown;
+    [SerializeField]
+    float maxCooldown;
     private void Start()
     {
         if (cooldownKO <= 0)
@@ -16,8 +20,8 @@ public class PenguinBehavior : MonoBehaviour
     }
     private void OnEnable()
     {
-
-        //start the main animation
+        float triggerAnimationDelay = Random.Range(minCooldown, maxCooldown);
+        //start the main animation sequence 
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,8 +36,11 @@ public class PenguinBehavior : MonoBehaviour
         {
             hasBeenHit = true;
             //trigger KO animation here
+
             //add the score value to total
-            //play the corroutine that delay the desactivation of the penguin
+            //ScoreManager.score+=1;
+
+
             StartCoroutine(CooldownKOPenguin());
         }
     }
