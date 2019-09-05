@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7743121518343417122}
   - component: {fileID: 750613494399257409}
   - component: {fileID: 5386709190975977727}
-  - component: {fileID: 46153210869843279}
   - component: {fileID: 1906945373402358143}
   m_Layer: 8
   m_Name: Ground
@@ -94,19 +93,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &46153210869843279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2450506006774938177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &1906945373402358143
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,7 +129,7 @@ PrefabInstance:
     - target: {fileID: 7231632287363477910, guid: 57d28639f0244b247b6a83f18bac47f3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -3.55
       objectReference: {fileID: 0}
     - target: {fileID: 7231632287363477910, guid: 57d28639f0244b247b6a83f18bac47f3,
         type: 3}

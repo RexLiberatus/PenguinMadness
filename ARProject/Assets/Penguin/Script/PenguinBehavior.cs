@@ -1,39 +1,87 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PenguinBehavior : MonoBehaviour
 {
+    #region Data
+    [Header("Control Data")]
     [SerializeField]
     int cooldownKO;
     [SerializeField]
     bool hasBeenHit;
+    [SerializeField]
+    float speed;
     [Header(" Animation cooldown")]
     [SerializeField]
     float minCooldown;
     [SerializeField]
     float maxCooldown;
 
+    bool isGoingUp;
+    bool isGoingDown;
+    #endregion
+    #region Accessors
+
     public bool HasBeenHit { get => hasBeenHit; set => hasBeenHit = value; }
-    private void Awake()
-    {
-        PenguinPulling.penguinPullList.Add(this);
-    }
+    public float Speed { get => speed; set => speed = value; }
+    #endregion
+    #region Start
+
     private void Start()
     {
+        Speed = 1;
+        isGoingDown = isGoingUp = false;
         if (cooldownKO <= 3)
             cooldownKO = 5;
         HasBeenHit = false;
-       // gameObject.SetActive(false);
+        gameObject.SetActive(false);
 
-    }
+    }    
+    #endregion
     private void OnEnable()
     {
-        float triggerAnimationDelay = Random.Range(minCooldown, maxCooldown);
-
+        float triggerAnimationDelay = UnityEngine.Random.Range(minCooldown, maxCooldown);
+        isGoingUp = true;
         //start the main animation sequence 
-        transform.Translate(Vector3.up * 5, Space.Self);
+        
 
+    }
+    private void Update()
+    {
+        if(isGoingUp)
+        {
+            if (transform.localPosition.y < 0.8f)
+            {
+                transform.localPosition += Vector3.up * Time.deltaTime * Speed;
+            }
+        }
+        if (transform.localPosition.y >= 0.8f)
+        {
+            StartCoroutine(DelayFall());
+            isGoingUp = false;
+            isGoingDown = true;
+        }
+            if (isGoingDown)
+        {
+            if (transform.localPosition.y > -0.8f)
+            {
+                transform.localPosition -= Vector3.up * Time.deltaTime * Mathf.Sqrt(Speed);
+            }
+            if(transform.localPosition.y<=-0.8f)
+            {
+                gameObject.SetActive(false);
+            }
+        }
+           
+
+
+    }
+
+    IEnumerator DelayFall()
+    {
+        yield return new WaitForSeconds(1.5f);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,8 +100,10 @@ public class PenguinBehavior : MonoBehaviour
             HasBeenHit = true; // validate that the penguin has been hit
 
             //trigger KO animation here
+            isGoingDown = true;
+
             StartCoroutine(CooldownKOPenguin());
-            
+            isGoingUp = false;
         }
     }
     IEnumerator CooldownKOPenguin()

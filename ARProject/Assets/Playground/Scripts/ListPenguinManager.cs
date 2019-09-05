@@ -7,10 +7,11 @@ public class ListPenguinManager : MonoBehaviour
     [SerializeField]
     List<PenguinBehavior> penguinList=new List<PenguinBehavior>();
 
-    public List<PenguinBehavior> Penguin { get => penguinList; set => penguinList = value; }
+    public List<PenguinBehavior> PenguinList { get => penguinList; set => penguinList = value; }
 
-    private void Start()
+    private void Awake()
     {
-        Penguin.AddRange(FindObjectsOfType<PenguinBehavior>()); 
+        PenguinList.AddRange(FindObjectsOfType<PenguinBehavior>());
+       
     }
 }
