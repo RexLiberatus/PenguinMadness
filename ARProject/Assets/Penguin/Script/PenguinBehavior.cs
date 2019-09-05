@@ -8,6 +8,7 @@ public class PenguinBehavior : MonoBehaviour
     int cooldownKO;
     [SerializeField]
     bool hasBeenHit;
+    [Header(" Animation cooldown")]
     [SerializeField]
     float minCooldown;
     [SerializeField]
@@ -18,9 +19,9 @@ public class PenguinBehavior : MonoBehaviour
     private void Start()
     {
         if (cooldownKO <= 3)
-            cooldownKO = 10;
+            cooldownKO = 5;
         HasBeenHit = false;
-        
+        PenguinPulling.penguinPullList.Add(this);
     }
     private void OnEnable()
     {
@@ -30,19 +31,20 @@ public class PenguinBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "PlayGround")//if drops back in the water (or same at the end of the main animation)
+        // USELESS FOR NOW
+        //if (other.tag == "PlayGround")//if drops back in the water (or same at the end of the main animation)
+        //{
+        //    gameObject.SetActive(false);
+        //}
+
+        if(other.tag=="Fist" && !HasBeenHit)//Detect of the player hit a penguin.
         {
-            gameObject.SetActive(false);
-        }
-        if(other.tag=="Fist" && !HasBeenHit)//if KO
-        {
-            HasBeenHit = true;
+            if (!HasBeenHit)   //add 1 to score value if penguin has not been hit yet
+                ScoreManager.score += 1;
+
+            HasBeenHit = true; // validate that the penguin has been hit
+
             //trigger KO animation here
-
-            //add the score value to total
-            ScoreManager.score+=1;
-
-
             StartCoroutine(CooldownKOPenguin());
             
         }
