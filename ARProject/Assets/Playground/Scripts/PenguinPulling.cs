@@ -18,6 +18,9 @@ public class PenguinPulling : MonoBehaviour
     [SerializeField]
     int maxRange;
 
+    [Header("Penguin List")]
+    [SerializeField]
+    List<PenguinBehavior> PenguinList;
     #endregion
 
     #region Accessors
@@ -32,12 +35,37 @@ public class PenguinPulling : MonoBehaviour
     }
     private void Start()
     {
+        PenguinList = penguinPullList;
+        minRange = 0;
+        maxRange = 16;
         TilesOccupationManager = TilesOccupationManager ?? FindObjectOfType<ListPenguinManager>();
+        StartCoroutine(MakePenguinsGreatAgain());
     }
 
-   public void RandomActivation(GameObject g)
+   IEnumerator MakePenguinsGreatAgain()
+    {
+        while(true)
+        {
+            ActivateRandomPenguinsFromList(PenguinList);
+            yield return new WaitForSeconds(5.0f);
+        }
+    }
+
+    private void Update()
+    {
+ ActivateRandomPenguinsFromList(penguinPullList);
+        }
+    public void GameobjectActivation(GameObject g)
     {
         g.SetActive(true);
+    }
+    int GenerateRandomInt(int min, int max)
+    {
+        return (int)(UnityEngine.Random.Range((float)MinRange, (float)MaxRange));
+    }
+    public void ActivateRandomPenguinsFromList( List<PenguinBehavior> objectList)
+    {
+        GameobjectActivation(objectList[GenerateRandomInt(MinRange, maxRange)].gameObject);
     }
 }
 

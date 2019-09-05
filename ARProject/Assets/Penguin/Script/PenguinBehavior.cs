@@ -15,18 +15,25 @@ public class PenguinBehavior : MonoBehaviour
     float maxCooldown;
 
     public bool HasBeenHit { get => hasBeenHit; set => hasBeenHit = value; }
-
+    private void Awake()
+    {
+        PenguinPulling.penguinPullList.Add(this);
+    }
     private void Start()
     {
         if (cooldownKO <= 3)
             cooldownKO = 5;
         HasBeenHit = false;
-        PenguinPulling.penguinPullList.Add(this);
+       // gameObject.SetActive(false);
+
     }
     private void OnEnable()
     {
         float triggerAnimationDelay = Random.Range(minCooldown, maxCooldown);
+
         //start the main animation sequence 
+        transform.Translate(Vector3.up * 5, Space.Self);
+
     }
 
     private void OnTriggerEnter(Collider other)
