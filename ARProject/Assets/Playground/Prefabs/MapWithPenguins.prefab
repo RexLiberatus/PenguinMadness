@@ -151,11 +151,10 @@ GameObject:
   - component: {fileID: 8414170372689842596}
   - component: {fileID: 2162841583176847792}
   - component: {fileID: 3724768136889776449}
-  - component: {fileID: 5163334266610740989}
   - component: {fileID: 766340066178854430}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,19 +232,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5163334266610740989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846755506694383962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &766340066178854430
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -272,9 +258,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5897110551112627628}
   - component: {fileID: 3631051942960893812}
-  m_Layer: 0
-  m_Name: Created Map 1
-  m_TagString: Untagged
+  m_Layer: 8
+  m_Name: MapWithPenguins
+  m_TagString: PlayGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 1044837819935314309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 75358282386343853}
   - {fileID: 3354014814870441221}
@@ -321,7 +307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2c0b6b355bcb44a88b98cc146342cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileList: []
 --- !u!1 &1133397505471438188
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,11 +597,10 @@ GameObject:
   - component: {fileID: 2783298853064158544}
   - component: {fileID: 1002758410954712569}
   - component: {fileID: 7270263637312947491}
-  - component: {fileID: 7805443805576799191}
   - component: {fileID: 889221898253314414}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -694,19 +678,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7805443805576799191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423014400487563315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &889221898253314414
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -874,11 +845,10 @@ GameObject:
   - component: {fileID: 1475032118840606691}
   - component: {fileID: 7608272419922614522}
   - component: {fileID: 5269890607546786166}
-  - component: {fileID: 8838960637553752121}
   - component: {fileID: 2574229775109107847}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -956,19 +926,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8838960637553752121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544926913312919167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &2574229775109107847
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1136,11 +1093,10 @@ GameObject:
   - component: {fileID: 1357237090526281553}
   - component: {fileID: 2950350438748957426}
   - component: {fileID: 1484712631357984944}
-  - component: {fileID: 4573206321714805965}
   - component: {fileID: 3507125633762304987}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1218,19 +1174,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4573206321714805965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2836261616518531170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &3507125633762304987
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1676,11 +1619,10 @@ GameObject:
   - component: {fileID: 6521580664648656095}
   - component: {fileID: 4652687079009231470}
   - component: {fileID: 273846815400602624}
-  - component: {fileID: 531063255029945312}
   - component: {fileID: 1858675232780045139}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1758,19 +1700,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &531063255029945312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3298553372796209601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &1858675232780045139
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1799,11 +1728,10 @@ GameObject:
   - component: {fileID: 3969051357467154092}
   - component: {fileID: 559447172142627772}
   - component: {fileID: 4509726931257232456}
-  - component: {fileID: 49640067754894673}
   - component: {fileID: 9046412169430132677}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1881,19 +1809,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &49640067754894673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3853178725884838249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &9046412169430132677
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2200,11 +2115,10 @@ GameObject:
   - component: {fileID: 4463706967607361602}
   - component: {fileID: 4826696375833022109}
   - component: {fileID: 5170830257100921938}
-  - component: {fileID: 6973376491734271962}
   - component: {fileID: 6206569985424722206}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2282,19 +2196,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6973376491734271962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4490701299708246146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &6206569985424722206
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2323,11 +2224,10 @@ GameObject:
   - component: {fileID: 576424065214069594}
   - component: {fileID: 6556468929343171644}
   - component: {fileID: 1410036924111344863}
-  - component: {fileID: 3248491592233299766}
   - component: {fileID: 5352820502352088536}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2405,19 +2305,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3248491592233299766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4504080911569365015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &5352820502352088536
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2446,11 +2333,10 @@ GameObject:
   - component: {fileID: 382848227672103887}
   - component: {fileID: 1353918461429072837}
   - component: {fileID: 5815805724997098308}
-  - component: {fileID: 1371262039678850753}
   - component: {fileID: 3341845243008764089}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2528,19 +2414,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1371262039678850753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4586050831756271087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &3341845243008764089
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2569,11 +2442,10 @@ GameObject:
   - component: {fileID: 8773799303669239586}
   - component: {fileID: 7662476540517621637}
   - component: {fileID: 478380224636484846}
-  - component: {fileID: 4837291008870649949}
   - component: {fileID: 4086561408709335559}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2651,19 +2523,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4837291008870649949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4808717485176860478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &4086561408709335559
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3109,11 +2968,10 @@ GameObject:
   - component: {fileID: 8480235231112457932}
   - component: {fileID: 4799654424233924919}
   - component: {fileID: 7130573523066168266}
-  - component: {fileID: 7192012793090213160}
   - component: {fileID: 942005120961931953}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3191,19 +3049,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7192012793090213160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5922673444289053710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &942005120961931953
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3371,11 +3216,10 @@ GameObject:
   - component: {fileID: 2475292994929605488}
   - component: {fileID: 4377832346323190644}
   - component: {fileID: 8280358679804418639}
-  - component: {fileID: 3395316067234670541}
   - component: {fileID: 7536351853970861483}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3453,19 +3297,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3395316067234670541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6725917852249200967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &7536351853970861483
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3494,11 +3325,10 @@ GameObject:
   - component: {fileID: 7363312565182861242}
   - component: {fileID: 2701532380175107727}
   - component: {fileID: 8527565173527848695}
-  - component: {fileID: 7783101568969829202}
   - component: {fileID: 2657093622870362080}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3576,19 +3406,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7783101568969829202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6799202201455514455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &2657093622870362080
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3895,11 +3712,10 @@ GameObject:
   - component: {fileID: 413365611406546529}
   - component: {fileID: 2906634384008626151}
   - component: {fileID: 2276072442323167902}
-  - component: {fileID: 2662558784028571237}
   - component: {fileID: 6735295312014539981}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3977,19 +3793,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2662558784028571237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8151026566183284492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &6735295312014539981
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4018,11 +3821,10 @@ GameObject:
   - component: {fileID: 4226417909098009108}
   - component: {fileID: 7083406730633475758}
   - component: {fileID: 6604123874313520318}
-  - component: {fileID: 7305106389384157194}
   - component: {fileID: 8510113881239147189}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4100,19 +3902,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7305106389384157194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8528886710095366904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &8510113881239147189
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4141,11 +3930,10 @@ GameObject:
   - component: {fileID: 7319490231710990654}
   - component: {fileID: 42756008402188475}
   - component: {fileID: 3597878098490594979}
-  - component: {fileID: 5380177918118040577}
   - component: {fileID: 7324265974261191296}
   m_Layer: 8
   m_Name: Ground(Clone)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4223,19 +4011,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5380177918118040577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9136431424459461733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b849e6b90dfd9ab40b38ab9080d2d0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupiedByPenguin: 0
 --- !u!54 &7324265974261191296
 Rigidbody:
   m_ObjectHideFlags: 0

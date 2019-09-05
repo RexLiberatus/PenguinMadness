@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68850d84ae7e8d744904433538356930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  penguinPrefab: {fileID: 7416781654362519195, guid: 57d28639f0244b247b6a83f18bac47f3,
+    type: 3}
+  offsetHeight: 5

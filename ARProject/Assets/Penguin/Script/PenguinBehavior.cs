@@ -33,7 +33,6 @@ public class PenguinBehavior : MonoBehaviour
         if (other.tag == "PlayGround")//if drops back in the water (or same at the end of the main animation)
         {
             gameObject.SetActive(false);
-            other.GetComponent<PenguinPresence>().PenguinLeftTile();
         }
         if(other.tag=="Fist" && !HasBeenHit)//if KO
         {

@@ -2,6 +2,12 @@
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
     <ImageTarget name="naniKoreeeeeeeeeeeeeeeeeeeeee" size="0.100000 0.056270" />
+    <ImageTarget name="pieceofarttryfivestars" size="0.100000 0.075043" />
+    <ImageTarget name="radiancePortal" size="0.100000 0.075000" />
+    <ImageTarget name="Galactic-Center" size="0.100000 0.075000" />
     <ImageTarget name="faceMozaic" size="0.100000 0.100000" />
+    <ImageTarget name="mosaictryFiveStarTry" size="0.100000 0.075000" />
+    <ImageTarget name="SmileZeroStar" size="0.100000 0.100000" />
+    <ImageTarget name="MarkerTestTechnifutur" size="0.100000 0.100000" />
   </Tracking>
 </QCARConfig>
