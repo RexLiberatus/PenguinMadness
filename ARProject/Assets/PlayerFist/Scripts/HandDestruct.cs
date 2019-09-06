@@ -5,11 +5,14 @@ using UnityEngine;
 public class HandDestruct : MonoBehaviour
 {
     [SerializeField]
-    public int coolDownKO;
+    public int coolDownAfterHit;
     [SerializeField]
     bool canHit;
+    [SerializeField]
+    Animator PawAnimator;
 
     public bool CanHit { get => canHit; set => canHit = value; }
+    public Animator PawAnimator1 { get => PawAnimator; set => PawAnimator = value; }
 
     private void Start()
     {
@@ -17,17 +20,14 @@ public class HandDestruct : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            //play animation here
-            canHit = false;
-        }
+       
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.CompareTag("Penguin"))
+        if (gameObject.CompareTag("Penguin") && canHit)
         {
             CanHit = false;
+            PawAnimator.SetTrigger("PawTrigger");
             StartCoroutine(CoolDownKOPenguin());
             CanHit = true;
             Debug.Log("Tu as touché un puinguin GG");
@@ -36,7 +36,7 @@ public class HandDestruct : MonoBehaviour
 
     IEnumerator CoolDownKOPenguin()
     {
-        yield return new WaitForSeconds(coolDownKO);
+        yield return new WaitForSeconds(coolDownAfterHit);
 
     }
 }
