@@ -19,6 +19,7 @@ public class HandDestruct : MonoBehaviour
             //other.GetComponent<PenguinBehavior>().HasBeenHit = true;   
             // tu peux par contre déclencher l'animation de la pate d'ours qui smash la cible (a voir avec dylan )
             StartCoroutine(CoolDownKOPenguin());
+            other.GetComponent<PenguinBehavior>().HasBeenHit = true;
             Debug.Log("Tu as touché un puinguin GG");
         }
     }
