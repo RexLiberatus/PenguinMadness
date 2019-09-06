@@ -81,7 +81,7 @@ public class PenguinBehavior : MonoBehaviour
 
     IEnumerator DelayFall()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.5f);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -99,11 +99,13 @@ public class PenguinBehavior : MonoBehaviour
 
             HasBeenHit = true; // validate that the penguin has been hit
 
-            //trigger KO animation here
             isGoingDown = true;
-
+            //trigger KO animation here
+            GetComponent<Animator>().SetBool("isStunt", true);
             StartCoroutine(CooldownKOPenguin());
             isGoingUp = false;
+            //trigger back to idle here
+            GetComponent<Animator>().SetBool("isStunt", false);
         }
     }
     IEnumerator CooldownKOPenguin()
