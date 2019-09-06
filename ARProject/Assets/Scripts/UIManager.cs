@@ -15,14 +15,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject textScoreWindows;
     [SerializeField]GameObject finalScoringWindows;
 
-    private void Awake()
-    {
-        textTimer = GameObject.Find("TextTimer");
-        textScoreUp = GameObject.Find("ScoreUp");
-    }
     // Start is called before the first frame update
     void Start()
     {
+        textTimer = GameObject.Find("TextTimer");
+        textScoreUp = GameObject.Find("ScoreUp");
         WindowsTimer();
     }
     
@@ -50,27 +47,36 @@ public class UIManager : MonoBehaviour
 
     IEnumerator Timer()
     {
-        if (time <= 15)
+        Text displayScore = textTimer.GetComponent<Text>();
+
+
+        while (time >= 16)
         {
-            textTimer.GetComponent<Text>().color = Color.red;
+            time--;
+            displayScore.text = string.Format("{0:0}:{1:00}", Mathf.Floor(time / 60), time % 60);
+            yield return new WaitForSeconds(1f);
         }
+
+        displayScore.color = Color.red;
+    
         while (time>0)
         {
             time--;
+            displayScore.text = string.Format ("{0:0}:{1:00}", Mathf.Floor(time/60), time % 60);
             yield return new WaitForSeconds(1f);
-            textTimer.GetComponent<Text>().text = string.Format ("{0:0}:{1:00}", Mathf.Floor(time/60), time % 60);
         }
-        if (time == 0)
-        {
-            finalScoringWindows.SetActive(true);
-            Time.timeScale = 0;
-            Debug.Log("Fin du timer");
-        }
+
+        finalScoringWindows.SetActive(true);
+        Time.timeScale = 0;
+        Debug.Log("Fin du timer");
+      
+        
     }
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("GameScene");
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
