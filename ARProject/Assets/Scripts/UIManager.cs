@@ -50,15 +50,24 @@ public class UIManager : MonoBehaviour
 
     IEnumerator Timer()
     {
-        if (time <= 15)
-        {
-            textTimer.GetComponent<Text>().color = Color.red;
-        }
-        while (time>0)
+        Text ScoreDisplay = textTimer.GetComponent<Text>();
+
+        while (time > 16)
         {
             time--;
+            ScoreDisplay.text = string.Format("{0:0}:{1:00}", Mathf.Floor(time / 60), time % 60);
             yield return new WaitForSeconds(1f);
-            textTimer.GetComponent<Text>().text = string.Format ("{0:0}:{1:00}", Mathf.Floor(time/60), time % 60);
+        }
+
+        while (time>0)
+        {
+            if (time <= 15)
+            {
+                textTimer.GetComponent<Text>().color = Color.red;
+            }
+            time--;
+            ScoreDisplay.text = string.Format ("{0:0}:{1:00}", Mathf.Floor(time/60), time % 60);
+            yield return new WaitForSeconds(1f);
         }
         if (time == 0)
         {
@@ -70,6 +79,7 @@ public class UIManager : MonoBehaviour
 
     public void RestartGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("GameScene");
     }
 

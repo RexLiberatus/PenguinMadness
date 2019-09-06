@@ -18,7 +18,7 @@ public class PenguinBehavior : MonoBehaviour
     float minCooldown;
     [SerializeField]
     float maxCooldown;
-
+    AudioSource audioData;
     bool isGoingUp;
     bool isGoingDown;
     #endregion
@@ -31,6 +31,8 @@ public class PenguinBehavior : MonoBehaviour
 
     private void Start()
     {
+        audioData = new AudioSource();
+        audioData.clip = FindObjectOfType<AudioManager>().PenguinShout;
         Speed = 1;
         isGoingDown = isGoingUp = false;
         if (cooldownKO <= 3)
@@ -44,6 +46,7 @@ public class PenguinBehavior : MonoBehaviour
     {
         float triggerAnimationDelay = UnityEngine.Random.Range(minCooldown, maxCooldown);
         isGoingUp = true;
+        audioData.PlayOneShot(audioData.clip);
         //start the main animation sequence 
         
 
@@ -81,7 +84,7 @@ public class PenguinBehavior : MonoBehaviour
 
     IEnumerator DelayFall()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
     }
 
     private void OnTriggerEnter(Collider other)
