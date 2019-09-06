@@ -7,9 +7,15 @@ public class FingerMoves : MonoBehaviour
      Camera _camera;
     [SerializeField]
     public LayerMask layerIndex;
+    float YToKeep;
     private void Awake()
     {
         _camera =Camera.main;
+        YToKeep = 0.5f;
+    }
+    private void Start()
+    {
+        YToKeep = transform.position.y;
     }
     void Update()
     {
@@ -24,7 +30,9 @@ public class FingerMoves : MonoBehaviour
             {
                 Debug.DrawLine(screenToWorld, _camera.transform.forward * 100, Color.magenta);
                 Debug.Log(hitInfo.collider.gameObject.name.ToString());
-                transform.position = hitInfo.collider.gameObject.transform.position;
+                Vector3 newPosition = hitInfo.collider.gameObject.transform.position;
+                transform.position = new Vector3(newPosition.x, YToKeep, newPosition.z);
+
             }
         }
     }
