@@ -28,7 +28,7 @@ public class FingerMoves : MonoBehaviour
             RaycastHit hitInfo;
             if(Physics.Raycast(ray, out hitInfo, 1000f, layerIndex))
             {
-                Debug.DrawLine(screenToWorld, _camera.transform.forward * 100, Color.magenta);
+                Debug.DrawLine(ray.origin,ray.direction * 100, Color.magenta);
                 Debug.Log(hitInfo.collider.gameObject.name.ToString());
                 Vector3 newPosition = hitInfo.collider.gameObject.transform.position;
                 transform.position = new Vector3(newPosition.x, YToKeep, newPosition.z);

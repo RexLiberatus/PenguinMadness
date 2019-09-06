@@ -12,14 +12,11 @@ public class PenguinBehavior : MonoBehaviour
     [SerializeField]
     bool hasBeenHit;
     [SerializeField]
-    float speed;
-    [Header(" Animation cooldown")]
-    [SerializeField]
-    float minCooldown;
-    [SerializeField]
-    float maxCooldown;
+    float speed = 1;
     AudioSource audioData;
+    [SerializeField]
     bool isGoingUp;
+    [SerializeField]
     bool isGoingDown;
     #endregion
     #region Accessors
@@ -33,7 +30,6 @@ public class PenguinBehavior : MonoBehaviour
     {
         audioData = new AudioSource();
         audioData.clip = FindObjectOfType<AudioManager>().PenguinShout;
-        Speed = 1;
         isGoingDown = isGoingUp = false;
         if (cooldownKO <= 3)
             cooldownKO = 5;
@@ -44,7 +40,8 @@ public class PenguinBehavior : MonoBehaviour
     #endregion
     private void OnEnable()
     {
-        float triggerAnimationDelay = UnityEngine.Random.Range(minCooldown, maxCooldown);
+        isGoingDown = false;
+        Speed = 1;
         isGoingUp = true;
         audioData.PlayOneShot(audioData.clip);
         //start the main animation sequence 
@@ -55,24 +52,24 @@ public class PenguinBehavior : MonoBehaviour
     {
         if(isGoingUp)
         {
-            if (transform.localPosition.y < 0.8f)
+            if (transform.localPosition.y < 0.9f)
             {
                 transform.localPosition += Vector3.up * Time.deltaTime * Speed;
             }
         }
-        if (transform.localPosition.y >= 0.8f)
+        if (transform.localPosition.y >= 0.9f)
         {
-            StartCoroutine(DelayFall());
             isGoingUp = false;
+            StartCoroutine(DelayFall());
             isGoingDown = true;
         }
             if (isGoingDown)
         {
-            if (transform.localPosition.y > -0.8f)
+            if (transform.localPosition.y > -0.7f)
             {
-                transform.localPosition -= Vector3.up * Time.deltaTime * Mathf.Sqrt(Speed);
+                transform.localPosition -= Vector3.up * Time.deltaTime * Speed;
             }
-            if(transform.localPosition.y<=-0.8f)
+            if(transform.localPosition.y<=-0.7f && !isGoingUp)
             {
                 gameObject.SetActive(false);
             }
@@ -92,7 +89,7 @@ public class PenguinBehavior : MonoBehaviour
         if(other.tag=="Fist" && !HasBeenHit)//Detect of the player hit a penguin.
         {
         HandDestruct controlerHand = other.GetComponent<HandDestruct>();
-            if (!HasBeenHit && controlerHand.CanHit)   //add 1 to score value if penguin has not been hit yet
+            if (!HasBeenHit)   //add 1 to score value if penguin has not been hit yet
                 ScoreManager.score += 1;
 
             HasBeenHit = true; // validate that the penguin has been hit
@@ -101,6 +98,7 @@ public class PenguinBehavior : MonoBehaviour
             //trigger KO animation here
             GetComponent<Animator>().SetBool("isStunt", true);
             StartCoroutine(CooldownKOPenguin());
+            HasBeenHit = false;
             isGoingUp = false;
             //trigger back to idle here
             GetComponent<Animator>().SetBool("isStunt", false);
@@ -109,7 +107,7 @@ public class PenguinBehavior : MonoBehaviour
     IEnumerator CooldownKOPenguin()
     {
         yield return new WaitForSeconds(cooldownKO);
-        HasBeenHit = false;
+       
     }
 
 }
