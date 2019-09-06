@@ -81,7 +81,7 @@ public class PenguinBehavior : MonoBehaviour
 
     IEnumerator DelayFall()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
     }
 
     private void OnTriggerEnter(Collider other)
