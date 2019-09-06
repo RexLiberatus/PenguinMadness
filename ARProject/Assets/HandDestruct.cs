@@ -6,20 +6,30 @@ public class HandDestruct : MonoBehaviour
 {
     [SerializeField]
     public int coolDownKO;
+    [SerializeField]
+    bool canHit;
 
+    public bool CanHit { get => canHit; set => canHit = value; }
 
-
+    private void Start()
+    {
+        CanHit = true;
+    }
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            //play animation here
+            canHit = false;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (gameObject.CompareTag("Penguin"))
         {
-            /*
-             * pas besoin vu que le pingouin détecte de lui même le hit si l'objet en trigger a un tag "Fist" 
-             */
-            //other.GetComponent<PenguinBehavior>().HasBeenHit = true;   
-            // tu peux par contre déclencher l'animation de la pate d'ours qui smash la cible (a voir avec dylan )
+            CanHit = false;
             StartCoroutine(CoolDownKOPenguin());
-            other.GetComponent<PenguinBehavior>().HasBeenHit = true;
+            CanHit = true;
             Debug.Log("Tu as touché un puinguin GG");
         }
     }
@@ -27,6 +37,6 @@ public class HandDestruct : MonoBehaviour
     IEnumerator CoolDownKOPenguin()
     {
         yield return new WaitForSeconds(coolDownKO);
-        GetComponent<PenguinBehavior>().HasBeenHit = false;
+
     }
 }

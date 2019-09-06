@@ -89,15 +89,10 @@ public class PenguinBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // USELESS FOR NOW
-        //if (other.tag == "PlayGround")//if drops back in the water (or same at the end of the main animation)
-        //{
-        //    gameObject.SetActive(false);
-        //}
-
         if(other.tag=="Fist" && !HasBeenHit)//Detect of the player hit a penguin.
         {
-            if (!HasBeenHit)   //add 1 to score value if penguin has not been hit yet
+        HandDestruct controlerHand = other.GetComponent<HandDestruct>();
+            if (!HasBeenHit && controlerHand.CanHit)   //add 1 to score value if penguin has not been hit yet
                 ScoreManager.score += 1;
 
             HasBeenHit = true; // validate that the penguin has been hit
